@@ -1,0 +1,23 @@
+# Safety configuration for valiant_citadel_ai_0
+
+kill_switch:
+  state: armed         # armed | disabled
+  disabled_reason: ''  # non-empty when disabled
+  dual_key_required: true
+
+thresholds:
+  order_rate_per_hour_limit: 20
+  abnormal_rate_trigger: 1000
+
+approvals_required:
+  safety_freeze: 2
+  safety_rollback: 2
+  safety_policy_update: 2
+
+watcher_rules:
+  require_owner: true
+  require_timestamp: true
+  check_dual_approvals_for:
+    - safety_freeze
+    - safety_rollback
+    - safety_policy_update

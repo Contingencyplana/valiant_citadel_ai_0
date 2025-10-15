@@ -39,6 +39,20 @@ Each workspace is a **province of the Great Daylands**, ruled by interlinked cou
 **Scope:** Coordination within a single workspace (e.g., `making_friends_0`).  
 **Command Focus:** Tactical emergence of ideas, microgames, and AI behaviors.
 
+## Safety Notes (valiant_citadel_ai_0)
+
+Authority Caps
+- Define maximum privileges per rank for initiating/approving protected orders.
+- Elevated actions (freeze, rollback, policy changes) require dual-key approvals from distinct ranks (e.g., Safety Officer + Duty Commander).
+
+Approval Chains (Examples)
+- Normal: Author → Reviewer → Steward
+- Elevated: Author → Reviewer → Safety Officer → Steward
+
+Gate Integration
+- Policy caps and chains are enforced via `policies/policy_engine.md` and verified in exchange payloads.
+- Violations result in `acceptance: blocked` and a remediation note emitted to the exchange.
+
 | Tier | Symbol | Scale | Role / Function |
 |------|---------|--------|-----------------|
 | **Juliett** | J | 64×64 (4,096 battlefields) | The complete theatre of war — a full workspace. |

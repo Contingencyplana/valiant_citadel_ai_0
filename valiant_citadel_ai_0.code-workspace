@@ -1,7 +1,8 @@
 {
   "folders": [
     { "name": "valiant_citadel_ai_0", "path": "." },
-    { "name": "exchange-mirror", "path": "exchange" }
+    { "name": "exchange-mirror", "path": "exchange" },
+    { "name": "planning", "path": "planning" }
   ],
   "settings": {
     "files.exclude": {

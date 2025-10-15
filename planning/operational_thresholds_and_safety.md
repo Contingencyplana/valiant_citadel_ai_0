@@ -71,4 +71,18 @@ Establishes quantitative guardrails, safety procedures, and tooling consideratio
 4. Set up weekly audit checklist template under `planning/audit_templates/` (to be created).
 5. Schedule first threshold review after Phase 1 pilot concludes.
 
-Adhering to this doctrine keeps SHAGI’s growth deliberate, reversible, and accountable.
+Adhering to this doctrine keeps SHAGI's growth deliberate, reversible, and accountable.
+
+## Safety Notes (valiant_citadel_ai_0)
+
+Linkage
+- Policies: `policies/policy_engine.md` codifies rate limits, human approvals, and audit trail.
+- Runbooks: use `tools/runbooks/incident_freeze.md` and `incident_rollback.md` when thresholds are breached.
+
+Acceptance Gates
+- Watcher checks: flag `rate` fields exceeding configured ceilings; require `approvals[]` for protected orders.
+- Validator: blocks commits if kill-switch documentation or runbooks are missing.
+
+Operationalization
+- Represent threshold adjustments as `safety_policy_update` orders with dual-key approvals.
+- Record audits and waivers via exchange notes; reference IDs in `ledger/journal.md` when applicable.

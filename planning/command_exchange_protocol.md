@@ -38,6 +38,20 @@ exchange/
 ```
 
 - `orders/` holds outbound directives from High Command.
+
+## Safety Notes (valiant_citadel_ai_0)
+
+Message Types → Gates
+- Orders: `safety_freeze`, `safety_rollback`, `safety_policy_update` require dual-key approvals; schema and DQ checks enforced.
+- Reports: `safety_incident_report`, `safety_postmortem`, `safety_readiness` must include `owner`, `id`, `timestamp`.
+
+Operationalization
+- All risky changes must ship as “change-as-order” through the exchange; acceptance gates block until approvals present.
+- Gate definitions live in `policies/policy_engine.md`; kill-switch protocol in `policies/kill_switch.md`.
+
+Acceptance Checks
+- Watcher validates approvals for protected orders and flags abnormal `rate` or missing fields.
+- Validator ensures runbooks/policies are present and README documents kill-switch.
 - `reports/` stores manufacturing and field submissions awaiting review plus long-term archive.
 - `acknowledgements/` tracks delivery confirmations to prevent silent loops.
 - `ledger/` keeps a rolling human-auditable summary and machine index.

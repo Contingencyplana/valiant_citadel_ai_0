@@ -16,3 +16,5 @@ Gates
 Interfaces
 - `safety_policy_update` order to add/change policies
 - `safety_readiness` report to attest active gate coverage
+
+See also: `policies/kill_switch.md` for disable/reenable protocol and dual-key requirements.
