@@ -1,0 +1,12 @@
+{
+  "folders": [
+    { "name": "valiant_citadel_ai_0", "path": "." },
+    { "name": "exchange-mirror", "path": "exchange" }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true
+    },
+    "editor.renderWhitespace": "boundary"
+  }
+}
