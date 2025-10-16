@@ -1,0 +1,7 @@
+{
+  "id": "rt-missing-fields-20251016020846",
+  "ack": {
+    "message": "test"
+  },
+  "type": "ack"
+}

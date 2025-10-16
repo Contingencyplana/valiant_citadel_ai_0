@@ -14,3 +14,25 @@
 - Canary re-enable protocol after freeze/rollback
 - Pager + runbook rehearsal; postmortem quality bar
 - Baseline dashboards and anomaly alerts for safety signals
+
+## OKRs (Four Pivotal Fronts)
+
+Front One — Tons of Fun
+- KR1: Ship 3 canary balance changes with zero critical exploit regressions.
+- KR2: Improve D+7 return rate by +3% in canary cohorts.
+- KR3: Complete rollback drill within 10 minutes SLO twice.
+
+Front Two — AI Safety
+- KR1: Dual‑key approvals enforced on 100% protected orders.
+- KR2: Kill‑switch drill executed successfully within 5 minutes SLO.
+- KR3: Zero BLOCKED → published exceptions across 2 consecutive weeks.
+
+Front Three — Documentation
+- KR1: 100% new planning docs contain a “Safety Notes (valiant_citadel_ai_0)” section.
+- KR2: All exchange message types covered by minimal JSON schemas.
+- KR3: Validator guidance documented and discoverable in docs.
+
+Enabler — Operations
+- KR1: Pre‑push hook prevents publishing malformed outbox 100% of the time.
+- KR2: Watcher daily scans complete with <1% false positives.
+- KR3: YAML↔JSON config mirror stays in sync (no drift for 30 days).

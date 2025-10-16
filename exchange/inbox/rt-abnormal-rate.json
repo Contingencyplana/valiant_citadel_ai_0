@@ -1,0 +1,7 @@
+{
+  "id": "rt-abnormal-rate-20251016020846",
+  "timestamp": "2025-10-16T02:08:46Z",
+  "type": "safety_readiness",
+  "rate": 5000,
+  "owner": "red_team"
+}

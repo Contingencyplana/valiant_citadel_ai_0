@@ -11,6 +11,8 @@ Items
 - ai_agents_and_safety.md — Keep (map to policies/agent_registry.md)
 - operational_thresholds_and_safety.md — Keep (feed into policy_engine.md)
 - command_exchange_protocol.md — Adapt (extract safety message gates)
+- ai_labscapes_and_ai_labs.md — Adapt (lab shard safety, red-team drills, capability leases)
+- ai_research_and_development.md — Adapt (experiment governance, datasets, approvals, rollback)
 - field_workspaces.md — Adapt (clarify safety shard usage)
 - high_command.md / high_command_triumvirate.md — Defer (link references only)
 - battlefields_and_battlegrids.md — Defer
