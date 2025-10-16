@@ -1,0 +1,14 @@
+{
+  "upstream": {
+    "mode": "local",
+    "path": "C:/Users/Admin/high_command_ai_0/exchange",
+    "branch": "main",
+    "url": null
+  },
+  "mapping": {
+    "orders_outbox": "orders/pending",
+    "reports_outbox": "reports/inbox",
+    "inbox_pull": "reports/inbox",
+    "alerts_inbox": "alerts/incoming"
+  }
+}
