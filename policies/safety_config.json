@@ -21,5 +21,9 @@
       "safety_rollback",
       "safety_policy_update"
     ]
+  },
+  "legacy": {
+    "warn_only": true,
+    "cutoff_utc": "2025-10-23T00:00:00Z"
   }
 }

@@ -1,4 +1,4 @@
-# 🛡 valiant_citadel_ai_0 — The Shield of the Creative Ecosystem
+# valiant_citadel_ai_0 — The Shield of the Creative Ecosystem
 
 This workspace is the **safety citadel** for the entire ecosystem.
 Its duties:

@@ -13,11 +13,14 @@ function Load-Json($p){ if (-not (Test-Path $p)) { Fail "Missing config: $p" }; 
 
 function Ensure-Dir($p){ if (-not (Test-Path $p)) { New-Item -ItemType Directory -Force -Path $p | Out-Null } }
 
-function Classify-Type([string]$type){
+function Classify-Type([string]$type,[string]$filename){
   $orders = @('safety_freeze','safety_rollback','safety_policy_update','safety_red_team_exercise')
   $reports = @('safety_incident_report','safety_postmortem','safety_readiness','safety_onboarding_ack')
+  $acks = @('ack','safety_ack')
   if ($orders -contains $type) { return 'order' }
   if ($reports -contains $type) { return 'report' }
+  if ($acks -contains $type) { return 'ack' }
+  if ($filename -like '*-ack.json') { return 'ack' }
   return 'unknown'
 }
 
@@ -35,7 +38,9 @@ if (-not (Test-Path $upstreamRoot)) { Fail "Upstream path not found: $upstreamRo
 
 $orderTarget = Join-Path $upstreamRoot $cfg.mapping.orders_outbox
 $reportTarget = Join-Path $upstreamRoot $cfg.mapping.reports_outbox
-Ensure-Dir $orderTarget; Ensure-Dir $reportTarget
+$ackTarget = $null
+if ($cfg.mapping.PSObject.Properties.Name -contains 'acks_outbox') { $ackTarget = Join-Path $upstreamRoot $cfg.mapping.acks_outbox }
+Ensure-Dir $orderTarget; Ensure-Dir $reportTarget; if ($ackTarget) { Ensure-Dir $ackTarget }
 
 $items = Get-ChildItem -File $outbox -Filter *.json -ErrorAction SilentlyContinue
 if (-not $items) { Info 'No outbox items to publish.'; exit 0 }
@@ -45,8 +50,8 @@ foreach ($f in $items) {
     $obj = (Get-Content -Raw -Path $f.FullName | ConvertFrom-Json)
   } catch { Warn "Invalid JSON: $($f.Name)"; continue }
 
-  $kind = Classify-Type $([string]$obj.type)
-  $destDir = if ($kind -eq 'order') { $orderTarget } elseif ($kind -eq 'report') { $reportTarget } else { $reportTarget }
+  $kind = Classify-Type $([string]$obj.type) $f.Name
+  $destDir = if ($kind -eq 'order') { $orderTarget } elseif ($kind -eq 'report') { $reportTarget } elseif ($kind -eq 'ack' -and $ackTarget) { $ackTarget } else { $reportTarget }
   $dest = Join-Path $destDir $f.Name
 
   if ($DryRun) {

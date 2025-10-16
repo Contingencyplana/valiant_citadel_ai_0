@@ -1,0 +1,11 @@
+{
+  "$id": "report.schema.json",
+  "type": "object",
+  "required": ["type", "id", "timestamp", "owner"],
+  "properties": {
+    "type": {"type": "string"},
+    "id": {"type": "string"},
+    "timestamp": {"type": "string"},
+    "owner": {"type": "string"}
+  }
+}

@@ -1,0 +1,13 @@
+# Logs and temp artifacts
+logs/
+*.log
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+
+# Local config copies (keep example committed)
+exchange/config.json
+
+# PowerShell history
+*.pshistory

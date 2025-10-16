@@ -22,16 +22,29 @@ $upstreamRoot = $cfg.upstream.path
 if (-not $upstreamRoot) { Fail 'Config upstream.path is required for local mode.' }
 if (-not (Test-Path $upstreamRoot)) { Fail "Upstream path not found: $upstreamRoot" }
 
-$fromDir = Join-Path $upstreamRoot $cfg.mapping.inbox_pull
-if (-not (Test-Path $fromDir)) { Fail "Upstream inbox path not found: $fromDir" }
+# Pull reports inbox
+$reportFrom = Join-Path $upstreamRoot $cfg.mapping.inbox_pull
+if (Test-Path $reportFrom) {
+  $rep = Get-ChildItem -File -Path $reportFrom -Filter *.json -ErrorAction SilentlyContinue
+  foreach ($f in $rep) { Copy-Item -LiteralPath $f.FullName -Destination (Join-Path $inboxLocal $f.Name) -Force; Info "Pulled $($f.Name)" }
+} else { Warn "Upstream reports inbox not found: $reportFrom" }
 
-$items = Get-ChildItem -File -Path $fromDir -Filter *.json -ErrorAction SilentlyContinue
-if (-not $items) { Info 'No upstream inbox items found.'; exit 0 }
+# Optionally pull orders pending
+if ($cfg.mapping.PSObject.Properties.Name -contains 'orders_pending_pull') {
+  $orderFrom = Join-Path $upstreamRoot $cfg.mapping.orders_pending_pull
+  if (Test-Path $orderFrom) {
+    $ord = Get-ChildItem -File -Path $orderFrom -Filter *.json -ErrorAction SilentlyContinue
+    foreach ($f in $ord) { Copy-Item -LiteralPath $f.FullName -Destination (Join-Path $inboxLocal $f.Name) -Force; Info "Pulled $($f.Name)" }
+  } else { Warn "Upstream orders pending not found: $orderFrom" }
+}
 
-foreach ($f in $items) {
-  $dest = Join-Path $inboxLocal $f.Name
-  Copy-Item -LiteralPath $f.FullName -Destination $dest -Force
-  Info "Pulled $($f.Name)"
+# Optionally pull acknowledgements pending
+if ($cfg.mapping.PSObject.Properties.Name -contains 'acks_pending_pull') {
+  $acksFrom = Join-Path $upstreamRoot $cfg.mapping.acks_pending_pull
+  if (Test-Path $acksFrom) {
+    $acks = Get-ChildItem -File -Path $acksFrom -Filter *.json -ErrorAction SilentlyContinue
+    foreach ($f in $acks) { Copy-Item -LiteralPath $f.FullName -Destination (Join-Path $inboxLocal $f.Name) -Force; Info "Pulled $($f.Name)" }
+  } else { Warn "Upstream acknowledgements pending not found: $acksFrom" }
 }
 
 Info 'Pull complete.'

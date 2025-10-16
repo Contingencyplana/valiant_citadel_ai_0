@@ -1,13 +1,38 @@
 Param(
   [string]$Inbox = 'exchange/inbox',
-  [string]$Outbox = 'exchange/outbox'
+  [string]$Outbox = 'exchange/outbox',
+  [string]$LogPath = 'logs/safety_watcher.log',
+  [switch]$ScanOutbox,
+  [switch]$FailOnBlocked
 )
 
 $ErrorActionPreference = 'Stop'
 
-function Info($m){ Write-Host "[watcher] $m" }
-function Warn($m){ Write-Host "[watcher] WARNING: $m" -ForegroundColor Yellow }
-function Block($m){ Write-Host "[watcher] BLOCKED: $m" -ForegroundColor Red }
+function Info($m){ Write-Host "[watcher] $m"; Log $m }
+function Warn($m){ Write-Host "[watcher] WARNING: $m" -ForegroundColor Yellow; Log "WARNING: $m"; $script:warnCount++ }
+function Block($m){ Write-Host "[watcher] BLOCKED: $m" -ForegroundColor Red; Log "BLOCKED: $m"; $script:blockCount++ }
+
+function Rotate-Log($path){
+  try {
+    $dir = Split-Path -Parent $path
+    if (-not (Test-Path $dir)) { New-Item -ItemType Directory -Force -Path $dir | Out-Null }
+    if (Test-Path $path) {
+      $fi = Get-Item $path
+      if ($fi.Length -gt 1048576) { # 1MB
+        $ts = (Get-Date -AsUTC).ToString('yyyyMMdd-HHmmss')
+        Rename-Item -Path $path -NewName ("safety_watcher_"+$ts+".log") -Force
+      }
+    }
+  } catch {}
+}
+
+function Log($m){
+  if (-not $LogPath) { return }
+  Rotate-Log -path $LogPath
+  $ts = (Get-Date -AsUTC).ToString('o')
+  $line = "[$ts] $m"
+  Add-Content -Path $LogPath -Value $line
+}
 
 function Load-Config {
   $yamlPath = 'policies/safety_config.yaml'
@@ -44,6 +69,9 @@ function Parse-Item($path) {
 New-Item -ItemType Directory -Force -Path $Inbox | Out-Null
 New-Item -ItemType Directory -Force -Path $Outbox | Out-Null
 
+$script:warnCount = 0
+$script:blockCount = 0
+
 $config = Load-Config
 if ($null -eq $config) {
   Warn 'No safety_config found or parsed; running with heuristic warnings only.'
@@ -59,9 +87,14 @@ else {
   } catch { Warn "Kill-switch check failed: $_" }
 }
 
-Info "Scanning inbox: $Inbox"
+if ($ScanOutbox) {
+  Info "Scanning outbox: $Outbox"
+} else {
+  Info "Scanning inbox: $Inbox"
+}
 
-$items = Get-ChildItem -File -Path $Inbox -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in '.json', '.yml', '.yaml' }
+$scanPath = if ($ScanOutbox) { $Outbox } else { $Inbox }
+$items = Get-ChildItem -File -Path $scanPath -ErrorAction SilentlyContinue | Where-Object { $_.Extension -in '.json', '.yml', '.yaml' }
 
 if (-not $items) {
   Info 'No pending exchange items found.'
@@ -84,8 +117,34 @@ foreach ($f in $items) {
     $timestamp = $obj.timestamp
     $approvals = $obj.approvals
 
-    if ($config.watcher_rules.require_owner -and (-not $owner)) { Block "$($f.Name): missing owner" }
-    if ($config.watcher_rules.require_timestamp -and (-not $timestamp)) { Block "$($f.Name): missing timestamp" }
+    # Legacy grace window logic for missing fields
+    $legacyWarnOnly = $false
+    $legacyCutoff = $null
+    if ($config.PSObject.Properties.Name -contains 'legacy') {
+      $legacyWarnOnly = [bool]$config.legacy.warn_only
+      if ($config.legacy.PSObject.Properties.Name -contains 'cutoff_utc') { $legacyCutoff = Get-Date $config.legacy.cutoff_utc }
+    }
+    $now = Get-Date -AsUTC
+
+    if ($config.watcher_rules.require_owner -and (-not $owner)) {
+      if ($legacyWarnOnly -and $legacyCutoff -and $now -lt $legacyCutoff) { Warn "$($f.Name): missing owner (legacy warn)" } else { Block "$($f.Name): missing owner" }
+    }
+    if ($config.watcher_rules.require_timestamp -and (-not $timestamp)) {
+      if ($legacyWarnOnly -and $legacyCutoff -and $now -lt $legacyCutoff) { Warn "$($f.Name): missing timestamp (legacy warn)" } else { Block "$($f.Name): missing timestamp" }
+    }
+
+    # Schema validation (minimal required fields)
+    try {
+      $schemaPath = if ($type -eq 'ack' -or $type -eq 'safety_ack') { 'exchange/schemas/ack.schema.json' } elseif ($type -like 'safety_*' -and $type -ne 'ack') { 'exchange/schemas/report.schema.json' } else { 'exchange/schemas/order.schema.json' }
+      if (Test-Path $schemaPath) {
+        $schema = Get-Content -Raw -Path $schemaPath | ConvertFrom-Json
+        if ($schema.required) {
+          foreach ($req in $schema.required) {
+            if (-not ($obj.PSObject.Properties.Name -contains $req)) { Block "$($f.Name): missing required field '$req' per schema" }
+          }
+        }
+      }
+    } catch { Warn "Schema validation failed for ${f.Name}: $_" }
 
     # Dual approvals for protected orders
     if ($type -and $config.approvals_required.PSObject.Properties.Name -contains $type) {
@@ -117,4 +176,5 @@ foreach ($f in $items) {
   if ($content -match '"acceptance":\s*"blocked"') { Info "Acknowledged blocked acceptance in $($f.Name)." }
 }
 
-Info 'Scan complete.'
+Info ("Scan complete. WARN=$warnCount BLOCKED=$blockCount")
+if ($FailOnBlocked -and $blockCount -gt 0) { exit 2 }

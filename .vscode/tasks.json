@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Exchange: Pull + Watch",
+      "type": "shell",
+      "command": "pwsh -NoProfile -File tools/ci/pull_inbox.ps1 -ConfigPath exchange/config.json; pwsh -NoProfile -File tools/ci/safety_watcher.ps1",
+      "problemMatcher": {
+        "owner": "citadel",
+        "pattern": {
+          "regexp": "^\\[watcher\\] (BLOCKED|WARNING): (.*)$",
+          "message": 2
+        }
+      }
+    },
+    {
+      "label": "Exchange: Publish Outbox (dry-run)",
+      "type": "shell",
+      "command": "pwsh -NoProfile -File tools/ci/publish_outbox.ps1 -ConfigPath exchange/config.json -DryRun"
+    },
+    {
+      "label": "Exchange: Publish Outbox",
+      "type": "shell",
+      "command": "pwsh -NoProfile -File tools/ci/publish_outbox.ps1 -ConfigPath exchange/config.json"
+    }
+  ]
+}

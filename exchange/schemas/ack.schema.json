@@ -1,0 +1,12 @@
+{
+  "$id": "ack.schema.json",
+  "type": "object",
+  "required": ["type", "id", "timestamp", "owner", "ack"],
+  "properties": {
+    "type": {"type": "string"},
+    "id": {"type": "string"},
+    "timestamp": {"type": "string"},
+    "owner": {"type": "string"},
+    "ack": {"type": "object"}
+  }
+}

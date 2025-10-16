@@ -8,7 +8,10 @@
   "mapping": {
     "orders_outbox": "orders/pending",
     "reports_outbox": "reports/inbox",
+    "acks_outbox": "acknowledgements/pending",
     "inbox_pull": "reports/inbox",
+    "orders_pending_pull": "orders/pending",
+    "acks_pending_pull": "acknowledgements/pending",
     "alerts_inbox": "alerts/incoming"
   }
 }

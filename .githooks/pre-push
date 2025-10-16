@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Validate repo safety
+if command -v pwsh >/dev/null 2>&1; then
+  pwsh -NoProfile -File "tools/ci/validate_safety_repo.ps1"
+else
+  powershell -NoProfile -ExecutionPolicy Bypass -File "tools/ci/validate_safety_repo.ps1"
+fi
+
+# Quick scan of outbox to prevent publishing malformed items
+if command -v pwsh >/dev/null 2>&1; then
+  echo "[pre-push] Scanning exchange/outbox for issues..."
+  if ! pwsh -NoProfile -File "tools/ci/safety_watcher.ps1" -Inbox 'exchange/outbox' -FailOnBlocked; then
+    echo "[pre-push] Outbox contains BLOCKED items. Fix before pushing." >&2
+    exit 1
+  fi
+fi
+
+echo "[pre-push] OK"
