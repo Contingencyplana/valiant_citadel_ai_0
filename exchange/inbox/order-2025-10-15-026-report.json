@@ -1,0 +1,13 @@
+{
+  "schema": "factory-report@1.0",
+  "order_id": "order-2025-10-15-026",
+  "reported_by": "toyfoundry_ai_0",
+  "timestamp_reported": "2025-10-16T12:35:00Z",
+  "status": "completed",
+  "summary": "Added Four Pivotal Fronts pointer README linking to High Command canon.",
+  "artifacts": {
+    "pointer_path": "planning/four_pivotal_fronts/README.md",
+    "sha256": "9823E342F7772EAEB5FDF8FF7D4729DB5067D793D2AFBF61E313DD6A1BB956B1"
+  }
+}
+
