@@ -1,6 +1,8 @@
 # 🌍 human_players_and_ai_players.md — The Bridge Between Worlds  
 *Planning Scroll - `planning/`*
 
+Status: Stable
+
 ---
 
 ## 🎯 Purpose

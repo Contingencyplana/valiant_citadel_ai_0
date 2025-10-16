@@ -1,5 +1,7 @@
 # 🧫 ai_research_and_development.md — AI R&D Doctrine  
-*Frontline Handbook — `high_command_ai_0/planning/`*
+*Frontline Handbook - `planning/`*
+
+Status: Stable
 ---
 ## 🎯 Purpose
 Establishes how R&D operates across the lattice: how ideas are proposed, prototyped, trialed, measured, and either promoted or retired with safety and provenance.
