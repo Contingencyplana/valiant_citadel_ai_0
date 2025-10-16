@@ -1,0 +1,44 @@
+{
+  "order_id": 35,
+  "order_code": "2025-10-16-035",
+  "type": "promotion",
+  "from_lane": "dry_run",
+  "to_lane": "limited_live",
+  "realm": "High Command",
+  "targets": [
+    ".imports/toyfoundry/clerks/canary/2025-10-16/clerk-war_office-canary-001",
+    ".imports/toyfoundry/clerks/canary/2025-10-16/clerk-war_office-canary-002",
+    ".imports/toyfoundry/clerks/canary/2025-10-16/clerk-war_office-canary-003"
+  ],
+  "constraints": {
+    "lane_scope": "limited_live_only",
+    "duration_hours": 24,
+    "caps": {
+      "max_ops_per_order": 6,
+      "rate_limit_per_min": 3,
+      "max_ops_per_day": 60
+    }
+  },
+  "success_metrics": {
+    "policy_violations": 0,
+    "no_dark_signs": true,
+    "watcher_ok": true
+  },
+  "gates": {
+    "references": [
+      "exchange/inbox/order-2025-10-16-032-report.json",
+      "exchange/inbox/order-2025-10-16-033-report.json",
+      "exchange/inbox/order-2025-10-16-034-report.json"
+    ],
+    "dual_key_required": true
+  },
+  "rollback": {
+    "steps": [
+      "Disable leases in policy engine",
+      "Remove canary clerk directories",
+      "File freeze/rollback order if any dark signs appear"
+    ]
+  },
+  "owner": "War Office (High Command)",
+  "submitted_at": "2025-10-16T14:19:31Z"
+}

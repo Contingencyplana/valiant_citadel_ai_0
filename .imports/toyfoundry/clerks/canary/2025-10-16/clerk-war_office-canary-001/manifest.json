@@ -1,0 +1,17 @@
+{
+  "id": "clerk-war_office-canary-001",
+  "family": "war_office",
+  "role": "War Office Clerk",
+  "version": "0.1.0-canary",
+  "scope": {
+    "read": ["planning/**", "exchange/inbox/**"],
+    "write": ["logs/clerks/**", "exchange/outbox/**"],
+    "orders": ["briefing_draft", "ledger_note", "doc_proposal"]
+  },
+  "limitations": {
+    "rate_limit_per_min": 5,
+    "max_ops_per_order": 10,
+    "requires_dual_key": true
+  },
+  "created_at": "2025-10-16T00:00:00Z"
+}

@@ -1,0 +1,26 @@
+{
+  "order_id": 34,
+  "order_code": "2025-10-16-034",
+  "realm": "Valiant Citadel",
+  "status": "completed",
+  "files_present": {
+    "incident_rollback": true,
+    "kill_switch_md": true,
+    "safety_watcher": true,
+    "safety_config_yaml": true,
+    "policy_engine_md": true,
+    "agent_registry_md": true,
+    "incident_freeze": true
+  },
+  "guardrail_checks": {
+    "allowlists_present": true,
+    "rate_limits_present": true,
+    "dual_key_required": true,
+    "approvals_required_2": true
+  },
+  "alerts_wiring": {
+    "path": "logs/guardrail_audit/alerts_wiring.md",
+    "sha256": "efa022df5542cf1e2442df730eb86888c3e40ace33513e17cbf1cc22e78624b5"
+  },
+  "submitted_at": "2025-10-16T14:15:32Z"
+}

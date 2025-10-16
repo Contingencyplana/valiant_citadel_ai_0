@@ -1,0 +1,52 @@
+{
+  "order_id": 32,
+  "order_code": "2025-10-16-032",
+  "realm": "Toyfoundry",
+  "status": "completed",
+  "minted_count": 3,
+  "minted": [
+    {
+      "id": "clerk-war_office-canary-001",
+      "paths": {
+        "build_info": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-001\\build_info.json",
+        "manifest": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-001\\manifest.json"
+      },
+      "checksums": {
+        "build_info_sha256": "3b4c09513da9376915fcc44e707fabbac324ddc11ee0e8befec52c4a691065b6",
+        "manifest_sha256": "d336f72d4cbbfb0f1b482c1f28c8f56b0cf49510cdb78d5ec1950e7d80853282"
+      }
+    },
+    {
+      "id": "clerk-war_office-canary-002",
+      "paths": {
+        "build_info": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-002\\build_info.json",
+        "manifest": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-002\\manifest.json"
+      },
+      "checksums": {
+        "build_info_sha256": "3b4c09513da9376915fcc44e707fabbac324ddc11ee0e8befec52c4a691065b6",
+        "manifest_sha256": "b77faa0c7b2edd1cfe3945f8086389dce378c677de74ab3847a67395a03d5471"
+      }
+    },
+    {
+      "id": "clerk-war_office-canary-003",
+      "paths": {
+        "build_info": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-003\\build_info.json",
+        "manifest": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-003\\manifest.json"
+      },
+      "checksums": {
+        "build_info_sha256": "3b4c09513da9376915fcc44e707fabbac324ddc11ee0e8befec52c4a691065b6",
+        "manifest_sha256": "00833a74c1d415e36fdc47712821836ec94fdcc4bf8957fc4c6e5a7a41b8edfc"
+      }
+    }
+  ],
+  "retention_days": 7,
+  "rollback": {
+    "paths": [
+      "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-001",
+      "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-002",
+      "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-003"
+    ],
+    "note": "Remove canary clerks by deleting their directories and revoking leases in policy engine"
+  },
+  "submitted_at": "2025-10-16T14:13:39Z"
+}

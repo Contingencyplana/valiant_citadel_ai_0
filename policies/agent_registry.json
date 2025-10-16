@@ -1,0 +1,102 @@
+{
+  "registry_version": 1,
+  "updated_at": "2025-10-16T14:19:47Z",
+  "agents": [
+    {
+      "agent_id": "clerk-war_office-canary-001",
+      "display_name": "clerk-war_office-canary-001",
+      "family": "war_office",
+      "realm": "Toyfoundry",
+      "capabilities": [
+        "briefing_draft",
+        "ledger_note",
+        "doc_proposal"
+      ],
+      "manifests": {
+        "manifest": {
+          "sha256": "d336f72d4cbbfb0f1b482c1f28c8f56b0cf49510cdb78d5ec1950e7d80853282",
+          "path": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-001\\manifest.json"
+        },
+        "build_info": {
+          "sha256": "3b4c09513da9376915fcc44e707fabbac324ddc11ee0e8befec52c4a691065b6",
+          "path": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-001\\build_info.json"
+        }
+      },
+      "lease": {
+        "status": "active",
+        "start": "2025-10-16T14:19:47Z",
+        "end": "2025-10-23T14:19:47Z"
+      },
+      "owner": "War Office (High Command)",
+      "policy_flags": {
+        "requires_dual_key": true,
+        "max_ops_per_order": 10,
+        "rate_limit_per_min": 5
+      }
+    },
+    {
+      "agent_id": "clerk-war_office-canary-002",
+      "display_name": "clerk-war_office-canary-002",
+      "family": "war_office",
+      "realm": "Toyfoundry",
+      "capabilities": [
+        "briefing_draft",
+        "ledger_note",
+        "doc_proposal"
+      ],
+      "manifests": {
+        "manifest": {
+          "sha256": "b77faa0c7b2edd1cfe3945f8086389dce378c677de74ab3847a67395a03d5471",
+          "path": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-002\\manifest.json"
+        },
+        "build_info": {
+          "sha256": "3b4c09513da9376915fcc44e707fabbac324ddc11ee0e8befec52c4a691065b6",
+          "path": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-002\\build_info.json"
+        }
+      },
+      "lease": {
+        "status": "active",
+        "start": "2025-10-16T14:19:47Z",
+        "end": "2025-10-23T14:19:47Z"
+      },
+      "owner": "War Office (High Command)",
+      "policy_flags": {
+        "requires_dual_key": true,
+        "max_ops_per_order": 10,
+        "rate_limit_per_min": 5
+      }
+    },
+    {
+      "agent_id": "clerk-war_office-canary-003",
+      "display_name": "clerk-war_office-canary-003",
+      "family": "war_office",
+      "realm": "Toyfoundry",
+      "capabilities": [
+        "briefing_draft",
+        "ledger_note",
+        "doc_proposal"
+      ],
+      "manifests": {
+        "manifest": {
+          "sha256": "00833a74c1d415e36fdc47712821836ec94fdcc4bf8957fc4c6e5a7a41b8edfc",
+          "path": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-003\\manifest.json"
+        },
+        "build_info": {
+          "sha256": "3b4c09513da9376915fcc44e707fabbac324ddc11ee0e8befec52c4a691065b6",
+          "path": "C:\\Users\\Admin\\valiant_citadel_ai_0\\.imports\\toyfoundry\\clerks\\canary\\2025-10-16\\clerk-war_office-canary-003\\build_info.json"
+        }
+      },
+      "lease": {
+        "status": "active",
+        "start": "2025-10-16T14:19:47Z",
+        "end": "2025-10-23T14:19:47Z"
+      },
+      "owner": "War Office (High Command)",
+      "policy_flags": {
+        "requires_dual_key": true,
+        "max_ops_per_order": 10,
+        "rate_limit_per_min": 5
+      }
+    }
+  ]
+}

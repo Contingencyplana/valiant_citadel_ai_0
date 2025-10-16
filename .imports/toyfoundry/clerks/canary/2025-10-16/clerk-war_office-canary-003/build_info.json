@@ -1,0 +1,9 @@
+{
+  "builder": "Toyfoundry",
+  "build_date": "2025-10-16T00:00:00Z",
+  "recipe": "canary-war-office-clerk",
+  "reproducibility": {
+    "inputs": ["manifest.json"],
+    "notes": "Canary build for scoped dry-run tasks"
+  }
+}

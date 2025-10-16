@@ -1,0 +1,39 @@
+{
+  "order_id": 33,
+  "order_code": "2025-10-16-033",
+  "realm": "High Command",
+  "status": "completed",
+  "installed_clerks": [
+    ".imports/toyfoundry/clerks/canary/2025-10-16/clerk-war_office-canary-001",
+    ".imports/toyfoundry/clerks/canary/2025-10-16/clerk-war_office-canary-002",
+    ".imports/toyfoundry/clerks/canary/2025-10-16/clerk-war_office-canary-003"
+  ],
+  "dry_run_outputs": [
+    {
+      "name": "briefing_draft.md",
+      "path": "C:\\Users\\Admin\\valiant_citadel_ai_0\\logs\\clerk_canary\\033_dry_run\\briefing_draft.md",
+      "sha256": "28d9ce1820c8d5d5607886123fa34f2e68a70f941c189a6ee9933516d06a7cc6",
+      "bytes": 315
+    },
+    {
+      "name": "doc_proposal.md",
+      "path": "C:\\Users\\Admin\\valiant_citadel_ai_0\\logs\\clerk_canary\\033_dry_run\\doc_proposal.md",
+      "sha256": "ccd144cf00fb1c9a93704361dfaf96bd2a387c316f542775877daff49a4186c3",
+      "bytes": 351
+    },
+    {
+      "name": "ledger_note.md",
+      "path": "C:\\Users\\Admin\\valiant_citadel_ai_0\\logs\\clerk_canary\\033_dry_run\\ledger_note.md",
+      "sha256": "3ad25625c66dd4aca41f55108b6bec6100dce52317b78ae78e0bb4613783294d",
+      "bytes": 308
+    },
+    {
+      "name": "telemetry.jsonl",
+      "path": "C:\\Users\\Admin\\valiant_citadel_ai_0\\logs\\clerk_canary\\033_dry_run\\telemetry.jsonl",
+      "sha256": "0c29f11b783e30ac8361247ef103ff839dc7411042b160ff2aede7d8267c60dd",
+      "bytes": 465
+    }
+  ],
+  "telemetry_path": "logs/clerk_canary/033_dry_run/telemetry.jsonl",
+  "submitted_at": "2025-10-16T14:14:47Z"
+}
