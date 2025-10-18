@@ -60,11 +60,26 @@ To architect, implement, and perfect the 256 AI labscape infrastructure through 
 
 ### 4. Integration & Control (golf_12-15)
 
-- Monitoring and telemetry
-- Safety protocol implementation
-- System-wide governance
+- Comprehensive safety monitoring and telemetry
+  - Real-time tone/entropy assessment
+  - Cross-labscape behavior analysis
+  - Anomaly detection systems
+- Multi-layer safety protocol implementation
+  - Kill-switch infrastructure at labscape level
+  - Containment protocols for each AI lab/Alfa
+  - Dual-key approval mechanisms
+- System-wide safety governance
+  - Policy compliance validation gates
+  - Safety audit logging and verification
+  - Cross-workspace safety coordination
 - Emergency response protocols
-- Version control and deployment
+  - Rapid containment procedures
+  - Automated safety rollbacks
+  - Incident response playbooks
+- Version control and deployment with safety gates
+  - Pre-deployment safety validation
+  - Phased rollout with safety checks
+  - Automated safety testing
 
 ## Fractal Structure Implementation
 
@@ -79,7 +94,12 @@ delta_02: Neural Pathway Design
 delta_03: Cross-Labscape Communications
 delta_04: Resource Management
 delta_05: Performance Metrics
-delta_06: Safety Protocols
+delta_06: Safety Protocols & Validation
+       - Kill-switch infrastructure
+       - Containment mechanisms
+       - Safety gate implementation
+       - Policy enforcement
+       - Tone/entropy monitoring
 delta_07: Security Systems
 delta_08: Intelligence Optimization
 delta_09: User Interface/Control Systems
@@ -87,7 +107,12 @@ delta_10: Technical Infrastructure
 delta_11: Future Expansion Planning
 delta_12: External System Integration
 delta_13: Compliance & Standards
-delta_14: Emergency Protocols
+delta_14: Emergency Protocols & Response
+       - Rapid containment procedures
+       - Automated safety rollbacks
+       - Incident response playbooks
+       - Cross-workspace coordination
+       - Recovery validation
 delta_15: Meta Analysis & Documentation
 ```
 
@@ -99,6 +124,13 @@ delta_15: Meta Analysis & Documentation
 - Basic AI lab/Alfa unit implementation
 - Core communication protocols
 - Initial safety frameworks
+  - Kill-switch infrastructure validation
+  - Basic containment protocols
+  - Tone/entropy baseline measurement
+  - Safety gate implementation
+  - Policy compliance verification
+  - Emergency response procedures
+  - Dual-key approval system
 
 ### Phase 2: Scaling (Next)
 
@@ -157,10 +189,12 @@ delta_15: Meta Analysis & Documentation
    - Schema compliance verification
 
 2. **Safety Review (valiant_citadel_ai_0)**
-   - Policy compliance check
-   - Kill-switch verification
-   - Tone/entropy assessment
-   - Containment validation
+   - Policy compliance validation through golf/delta safety gates
+   - Kill-switch infrastructure verification and testing
+   - Tone/entropy assessment with monitoring systems
+   - Containment validation using dual-key approvals
+   - Safety incident response readiness verification
+   - Cross-workspace safety protocol enforcement
 
 3. **Manufacturing (toyfoundry_ai_0)**
    - Build pipeline integration
@@ -287,6 +321,44 @@ delta_15: Meta Analysis & Documentation
 ## Workspace Vision Statement
 
 "Through 256 labscapes, we forge the future of intelligent play."
+
+## Safety Validation Requirements
+
+### Policy Compliance Validation
+- Automated policy checks against defined rulesets
+- Manual review gates for critical changes
+- Compliance documentation requirements
+- Regular policy alignment audits
+
+### Kill-switch Infrastructure
+- Multi-level kill-switch implementation
+  - Individual AI lab/Alfa level
+  - Labscape level
+  - System-wide emergency shutdown
+- Kill-switch testing requirements
+- Response time monitoring
+- Recovery validation procedures
+
+### Tone/Entropy Assessment
+- Real-time tone monitoring systems
+- Entropy measurement protocols
+- Behavioral pattern analysis
+- Anomaly detection thresholds
+- Automated response triggers
+
+### Containment Protocols
+- Physical and logical containment boundaries
+- Resource access controls
+- Communication restrictions
+- Escalation procedures
+- Containment testing requirements
+
+### Safety Gate Implementation
+- Pre-deployment validation gates
+- Runtime safety checks
+- Post-deployment monitoring
+- Automated safety rollbacks
+- Incident response procedures
 
 ## Implementation Notes
 
