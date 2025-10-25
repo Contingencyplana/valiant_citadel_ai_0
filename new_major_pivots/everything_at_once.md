@@ -2,7 +2,7 @@
 
 **Created:** 2025-10-18  
 **Status:** Core Philosophy (Meta-Pivot)  
-**Purpose:** Unify the Four Major Pivots into a coherent design philosophy
+**Purpose:** Unify the Five Major Pivots into a coherent design philosophy
 
 ---
 
@@ -106,7 +106,7 @@ A **Juliett** (4,096 Alfas = one Theatre of War) is like a territory with **rura
 
 ---
 
-## 🎯 How The Four Pivots Unify
+## 🎯 How The Five Pivots Unify
 
 Each pivot contributes a layer to the "Everything At Once" paradigm:
 
@@ -125,6 +125,11 @@ Each pivot contributes a layer to the "Everything At Once" paradigm:
 ### **4. Fractal Folder Structure (golf_00-15)**
 - **Lets it SCALE infinitely** - 4,096 Alfas organized hierarchically
 - **Result:** Complexity remains manageable through self-similar patterns
+
+### **5. Emoji-First Computing Language (Pivot Five)**
+
+- **Makes it UNIVERSALLY ACCESSIBLE** - Glyph chains replace text commands for humans and AI alike
+- **Result:** Toddlers, cross-lingual allies, and symbolic-first agents share the same playable grammar
 
 **Everything At Once is the EMERGENT PROPERTY when all four pivots harmonize.**
 
@@ -274,7 +279,8 @@ When the President executed Order 028 (Canary Alfa Batches), the President exper
 ## 📚 Cross-References
 
 ### **Foundation Documents:**
-- **Four Major Pivots:** `new_major_pivots/70_30_play_devops_ratio.md`, `playable_workflow_overlay.md`, `shagi_vision_maintenance.md`, `fractal_folder_structure.md`
+
+- **Five Major Pivots:** `new_major_pivots/70_30_play_devops_ratio.md`, `playable_workflow_overlay.md`, `shagi_vision_maintenance.md`, `fractal_folder_structure.md`, `new_major_pivots/new_major_pivot_5.md`
 - **Seven Pivotal Fronts:** `planning/pivotal_fronts_pointer.md`
 - **Daylands Philosophy:** `planning/daylands_and_nightlands.md`
 

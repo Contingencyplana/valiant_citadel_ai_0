@@ -8,13 +8,13 @@
 
 ## Overview
 
-The **Four Major Pivots** represent a fundamental shift in how we build **Nightlands Multiplayer Game** and pursue the **SHAGI (Supersafe Hyperadvanced Artificial General Intelligence)** vision.
+The **Five Major Pivots** represent a fundamental shift in how we build **Nightlands Multiplayer Game** and pursue the **SHAGI (Supersafe Hyperadvanced Artificial General Intelligence)** vision.
 
 **Core insight:** The existing workflow (VSCode, PowerShell, GitHub, Azure) is soul-destroyingly boring for the human operator. To sustain this project long-term, we must transform development into gameplay—where tactical decisions on emoji battlegrids drive automation behind the scenes.
 
 ---
 
-## The Four Major Pivots
+## The Five Major Pivots
 
 | Pivot | Summary | Impact |
 |-------|---------|--------|
@@ -22,6 +22,7 @@ The **Four Major Pivots** represent a fundamental shift in how we build **Nightl
 | **[Two](new_major_pivot_2.md)** | **Playable Workflow Overlay** | 16×16 emoji battlegrids (Alfas) replace VSCode/PowerShell/GitHub/Azure interfaces |
 | **[Three](new_major_pivot_3.md)** | **Maintain Big Ideas & SHAGI Vision** | Methodology change, not vision abandonment—playable workflows are SHAGI training ground |
 | **[Four](new_major_pivot_4.md)** | **Fractal Folder Structure** | Golf_00 through Golf_15 organize 4,096 Alfas (workflow nodes) via base-16 hierarchy |
+| **[Five](new_major_pivot_5.md)** | **Emoji-First Computing Language** | Emoji glyph grammar enables universal participation and JSON round-tripping |
 
 ---
 
@@ -33,7 +34,9 @@ The **Four Major Pivots** represent a fundamental shift in how we build **Nightl
 │  (Thousands of interconnected multiplayer games)│
 └────────────────┬────────────────────────────────┘
                  │
-┌────────────────▼────────────────────────────────┐
+Pivot Five wraps the entire stack with an **emoji-first grammar** that keeps commands accessible to toddlers, cross-lingual allies, and symbolic AI agents while still compiling into the same workflows.
+
+**Read bottom-to-top for implementation order:**
 │  PIVOT TWO: Playable Workflow Overlay           │  ← Delivery mechanism
 │  (16×16 emoji battlegrids replace dev-ops UIs)  │
 └────────────────┬────────────────────────────────┘
@@ -54,6 +57,7 @@ The **Four Major Pivots** represent a fundamental shift in how we build **Nightl
 2. Build playable overlay (Alfa Zero prototype) ← **Next**
 3. Achieve 70/30 ratio (measure time in game vs. VSCode)
 4. Scale to multiverse (SHAGI training data from 4,096 Alfas)
+5. Enable universal participation via emoji-first language (Pivot Five)
 
 ---
 
@@ -61,17 +65,19 @@ The **Four Major Pivots** represent a fundamental shift in how we build **Nightl
 
 ### Completed
 - ✅ **Pivot Four** — Fractal folder structure created (`golf_00` through `golf_15`)
-- ✅ **Pivot documentation** — All four pivots formally specified
+- ✅ **Pivot documentation** — All five pivots formally specified
 - ✅ **Exchange protocol operational** — High Command ↔ Toyfoundry ↔ Toysoldiers coordination proven
 - ✅ **Telemetry quilt functional** — Aggregates factory-reports into composite rollups
 
 ### In Progress
 - 🔄 **Alfa Zero prototype** — Spec drafted (`docs/alfa_zero_spec.md`), implementation pending
+- 🔄 **Emoji grammar Level-0** — Glyph lexicon and card layouts under review
 - 🔄 **Pre-pivot orders cleanup** — Order-031 awaiting Toysoldiers report
 
 ### Upcoming
 - 📋 **Alfa Zero Phase 1** — Build static 16×16 grid renderer
 - 📋 **Alfa Zero Phase 2** — Wire grid to exchange protocol (clicks → orders → telemetry → grid updates)
+- 📋 **Emoji runtime bridge** — Compile glyph chains into Toyfoundry/Toysoldiers order payloads
 - 📋 **Golf_00 population** — Create first 256 Alfas (validate fractal architecture)
 
 ---
@@ -197,4 +203,4 @@ The **Four Major Pivots** represent a fundamental shift in how we build **Nightl
 ---
 
 *"The future is playable, or it isn't worth building."*  
-— Four Major Pivots Founding Principle
+— Five Major Pivots Founding Principle

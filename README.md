@@ -80,6 +80,15 @@ Our safety infrastructure is implemented through four primary sections:
 - [Safety Policies](policies/README.md) - Core safety rules
 - [Emergency Protocols](docs/emergency/README.md) - Response procedures
 - [Integration Guidelines](docs/integration/README.md) - Cross-workspace safety
+- [Major Pivot Five](new_major_pivots/new_major_pivot_5.md) - Emoji-first command language briefing
+
+## Major Pivot Alignment
+
+- **Pivot One:** Maintain 70/30 play-to-ops ratio while running safety drills
+- **Pivot Two:** Use playable workflow overlay for command review and incident reenactments
+- **Pivot Three:** Keep SHAGI vision at the center of every safety audit
+- **Pivot Four:** Leverage the fractal golf/delta hierarchy for containment coverage
+- **Pivot Five:** Adopt emoji-first glyph commands so pre-literate allies can trigger emergency actions safely
 
 ## Safety Standards
 
@@ -91,4 +100,4 @@ Our safety infrastructure is implemented through four primary sections:
 
 ---
 *Genesis Order-2025-10-16-001 — Establish the Valiant Citadel*  
-*Last Updated: 2025-10-19 — Safety Architecture Implementation*
+*Last Updated: 2025-10-25 — Pivot Five integration*
