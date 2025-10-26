@@ -20,6 +20,7 @@ Update the files here first, then immediately propagate the exact same change to
 | v1.3 | 2025-10-26 | Pivot Five emoji-first alignment updates staged here | VC (source) · Pending HC · TF · TS · RD |
 | v1.4 | 2025-10-26 | RD review + adoption of Pivot Five alignment set; ready to propagate outward | RD · Pending HC · TF · TS |
 | v1.5 | 2025-10-26 | Toyfoundry ACK: emitter bridge online + War Office handoff checklist drafted | TF · Pending HC · TS · VC · RD |
+| v1.6 | 2025-10-26 | Valiant Citadel monitoring hooks live (schema_guard, narrator_log, glyph_vo_audit) | VC · Pending HC · TF · TS · RD |
 
 **Process reminder:**
 

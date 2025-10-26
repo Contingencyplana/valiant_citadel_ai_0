@@ -12,6 +12,7 @@ This directory contains documentation for safety monitoring systems and procedur
 - Behavioral analysis
 - Resource tracking
 - Performance metrics
+- Pivot Five telemetry hooks (schema drift, narrator usage)
 
 ### Alert Systems
 
@@ -19,6 +20,7 @@ This directory contains documentation for safety monitoring systems and procedur
 - Classification rules
 - Distribution protocols
 - Response triggers
+- Glyph/VO discrepancy escalations
 
 ### Data Collection
 
@@ -26,6 +28,7 @@ This directory contains documentation for safety monitoring systems and procedur
 - Log aggregation
 - Status tracking
 - Performance monitoring
+- Emoji-first payload snapshots
 
 ## Monitoring Categories
 
@@ -35,6 +38,7 @@ This directory contains documentation for safety monitoring systems and procedur
 - Containment integrity
 - Policy compliance
 - Response times
+- Emoji schema integrity
 
 ### System Health
 
@@ -42,6 +46,7 @@ This directory contains documentation for safety monitoring systems and procedur
 - Service availability
 - Resource utilization
 - Performance indicators
+- Narrator service coverage
 
 ### Behavioral Patterns
 
@@ -49,6 +54,7 @@ This directory contains documentation for safety monitoring systems and procedur
 - Resource usage patterns
 - Communication flows
 - Interaction analysis
+- Glyph-to-voice cadence adherence
 
 ## Implementation Guidelines
 
@@ -58,6 +64,7 @@ This directory contains documentation for safety monitoring systems and procedur
 2. Data collection systems
 3. Alert configuration
 4. Response automation
+5. Pivot Five hook deployment (`schema_guard`, `narrator_log`, `glyph_vo_audit`)
 
 ### Maintenance Procedures
 
@@ -65,6 +72,7 @@ This directory contains documentation for safety monitoring systems and procedur
 - System updates
 - Performance tuning
 - Documentation updates
+- Pivot Five hook validation (weekly)
 
 ## Response Procedures
 
@@ -106,6 +114,7 @@ This directory contains documentation for safety monitoring systems and procedur
 - Configuration guides
 - Operation procedures
 - Maintenance plans
+- Pivot Five hook runbooks
 
 ### Incident Records
 
@@ -116,6 +125,10 @@ This directory contains documentation for safety monitoring systems and procedur
 
 ## Version Control
 
-**Version:** 1.0  
-**Last Updated:** 2025-10-19  
-**Next Review:** 2025-11-19
+## Pivot Five Monitoring Hooks
+
+Review `docs/monitoring/pivot_five_hooks.md` for detailed implementation guidance covering schema drift detection, narrator usage logging, and glyph/VO discrepancy escalation.
+
+**Version:** 1.1  
+**Last Updated:** 2025-10-26  
+**Next Review:** 2025-11-26
