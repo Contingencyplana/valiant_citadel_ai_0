@@ -1,5 +1,9 @@
 {
   "schema": "factory-order@1.0",
+  "type": "factory_order",
+  "id": "order-033",
+  "timestamp": "2025-10-26T07:01:00Z",
+  "owner": "valiant_citadel_ai_0",
   "order_id": "order-033",
   "summary": "Barracks reinforce the Garrison -> Victory",
   "glyph_chain": ["🏰", "🛡️", "🪖", "✅"],

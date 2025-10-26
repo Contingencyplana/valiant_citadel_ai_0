@@ -1,5 +1,9 @@
 {
   "schema": "factory-order@1.0",
+  "type": "factory_order",
+  "id": "order-034",
+  "timestamp": "2025-10-26T07:02:00Z",
+  "owner": "valiant_citadel_ai_0",
   "order_id": "order-034",
   "summary": "Relay signals the Vanguard -> Victory",
   "glyph_chain": ["📡", "📨", "🛡️", "✅"],

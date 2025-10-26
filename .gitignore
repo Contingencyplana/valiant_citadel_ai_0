@@ -11,3 +11,7 @@ exchange/config.json
 
 # PowerShell history
 *.pshistory
+
+# Python bytecode
+__pycache__/
+*.pyc

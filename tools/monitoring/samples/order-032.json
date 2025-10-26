@@ -1,5 +1,9 @@
 {
   "schema": "factory-order@1.0",
+  "type": "factory_order",
+  "id": "order-032",
+  "timestamp": "2025-10-26T07:00:00Z",
+  "owner": "valiant_citadel_ai_0",
   "order_id": "order-032",
   "summary": "Forge crafts the Ally -> Victory",
   "glyph_chain": ["🛠️", "⚒️", "🤖", "✅"],

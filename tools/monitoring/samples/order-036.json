@@ -1,5 +1,9 @@
 {
   "schema": "factory-order@1.0",
+  "type": "factory_order",
+  "id": "order-036",
+  "timestamp": "2025-10-26T07:04:00Z",
+  "owner": "valiant_citadel_ai_0",
   "order_id": "order-036",
   "summary": "Relay guides the Ally -> Victory",
   "glyph_chain": ["📡", "🧭", "🤝", "✅"],

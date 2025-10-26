@@ -36,6 +36,10 @@ ALLOWED_OPTIONAL_TOP_KEYS = {
     "context",
     "links",
     "tags",
+    "type",
+    "id",
+    "timestamp",
+    "owner",
 }
 
 REQUIRED_INTENT_KEYS = {"actor", "action", "target", "outcome"}

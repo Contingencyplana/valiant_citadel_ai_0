@@ -1,5 +1,9 @@
 {
   "schema": "factory-order@1.0",
+  "type": "factory_order",
+  "id": "order-035",
+  "timestamp": "2025-10-26T07:03:00Z",
+  "owner": "valiant_citadel_ai_0",
   "order_id": "order-035",
   "summary": "Arsenal equips the Phalanx -> Victory",
   "glyph_chain": ["🏭", "⚙️", "🛡️", "✅"],
