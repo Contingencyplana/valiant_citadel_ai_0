@@ -1,0 +1,27 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "order-033",
+  "summary": "Barracks reinforce the Garrison -> Victory",
+  "glyph_chain": ["🏰", "🛡️", "🪖", "✅"],
+  "intent": {
+    "actor": "barracks",
+    "action": "reinforce",
+    "target": "garrison",
+    "outcome": "victory"
+  },
+  "telemetry_stub": {
+    "batch_id": "barracks-reinforce-20251026T000100Z",
+    "ritual": "barracks",
+    "units_processed": 4,
+    "status": "success",
+    "duration_ms": 515,
+    "locale": "en-US"
+  },
+  "narration": {
+    "persona": "frontline_correspondent",
+    "locale": "en-US",
+    "audio_asset_id": "vo/barracks_garrison_victory_v1",
+    "transcript": "Barracks reinforce the Garrison -> Victory",
+    "beats": ["Barracks", "reinforce", "the Garrison", "Victory"]
+  }
+}

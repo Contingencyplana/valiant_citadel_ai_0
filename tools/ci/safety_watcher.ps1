@@ -12,6 +12,74 @@ function Info($m){ Write-Host "[watcher] $m"; Log $m }
 function Warn($m){ Write-Host "[watcher] WARNING: $m" -ForegroundColor Yellow; Log "WARNING: $m"; $script:warnCount++ }
 function Block($m){ Write-Host "[watcher] BLOCKED: $m" -ForegroundColor Red; Log "BLOCKED: $m"; $script:blockCount++ }
 
+$script:pivotFivePythonInfo = $null
+$script:pivotFiveHooks = @{}
+
+try {
+  $monitoringRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\monitoring')).Path
+  $script:pivotFiveHooks = @{
+    schema_guard = Join-Path $monitoringRoot 'schema_guard.py'
+    narrator_log = Join-Path $monitoringRoot 'narrator_log.py'
+    glyph_vo_audit = Join-Path $monitoringRoot 'glyph_vo_audit.py'
+  }
+} catch {
+  $script:pivotFiveHooks = @{}
+}
+
+function Get-PythonInvocation {
+  if ($script:pivotFivePythonInfo) { return $script:pivotFivePythonInfo }
+  foreach ($candidate in @('python', 'py')) {
+    try {
+      $cmd = Get-Command $candidate -ErrorAction Stop
+      if ($candidate -eq 'py') {
+        $script:pivotFivePythonInfo = @{ Command = $cmd.Source; PrefixArgs = @('-3') }
+      } else {
+        $script:pivotFivePythonInfo = @{ Command = $cmd.Source; PrefixArgs = @() }
+      }
+      return $script:pivotFivePythonInfo
+    } catch {}
+  }
+  Warn 'Python runtime not located; Pivot Five monitoring hooks skipped.'
+  $script:pivotFivePythonInfo = $false
+  return $script:pivotFivePythonInfo
+}
+
+function Invoke-PivotFiveHook {
+  param(
+    [string]$HookName,
+    [string]$ScriptPath,
+    [string[]]$Arguments
+  )
+
+  if (-not $ScriptPath -or -not (Test-Path $ScriptPath)) { return }
+  $pythonInfo = Get-PythonInvocation
+  if (-not $pythonInfo) { return }
+
+  $command = $pythonInfo.Command
+  $hookArgs = @()
+  if ($pythonInfo.PrefixArgs) { $hookArgs += $pythonInfo.PrefixArgs }
+  $hookArgs += ,$ScriptPath
+  if ($Arguments) { $hookArgs += $Arguments }
+
+  $output = & $command @hookArgs 2>&1
+  $exitCode = $LASTEXITCODE
+  if ($exitCode -ne 0) {
+    $joined = $output -join '; '
+  Warn ("$HookName hook exit ${exitCode}: $joined")
+    return
+  }
+  foreach ($line in $output) {
+    if ([string]::IsNullOrWhiteSpace($line)) { continue }
+    if ($line -like 'ALERT:*') {
+      Warn "$HookName alert -> $line"
+    } elseif ($line -like 'WARNING:*') {
+      Warn "$HookName warning -> $line"
+    } else {
+      Info "$HookName -> $line"
+    }
+  }
+}
+
 function Rotate-Log($path){
   try {
     $dir = Split-Path -Parent $path
@@ -174,6 +242,12 @@ foreach ($f in $items) {
   }
 
   if ($content -match '"acceptance":\s*"blocked"') { Info "Acknowledged blocked acceptance in $($f.Name)." }
+
+  if ($null -ne $obj -and $obj.schema -eq 'factory-order@1.0' -and $script:pivotFiveHooks.Count -gt 0) {
+    Invoke-PivotFiveHook -HookName 'schema_guard' -ScriptPath $script:pivotFiveHooks.schema_guard -Arguments @('--payload', $f.FullName)
+    Invoke-PivotFiveHook -HookName 'narrator_log' -ScriptPath $script:pivotFiveHooks.narrator_log -Arguments @('--payload', $f.FullName)
+    Invoke-PivotFiveHook -HookName 'glyph_vo_audit' -ScriptPath $script:pivotFiveHooks.glyph_vo_audit -Arguments @('--payload', $f.FullName)
+  }
 }
 
 Info ("Scan complete. WARN=$warnCount BLOCKED=$blockCount")

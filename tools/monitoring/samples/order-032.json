@@ -1,0 +1,28 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "order-032",
+  "summary": "Forge crafts the Ally -> Victory",
+  "glyph_chain": ["🛠️", "⚒️", "🤖", "✅"],
+  "intent": {
+    "actor": "forge",
+    "action": "craft",
+    "target": "ally",
+    "outcome": "victory",
+    "qualifiers": ["level0"]
+  },
+  "telemetry_stub": {
+    "batch_id": "forge-craft-20251026T000000Z",
+    "ritual": "forge",
+    "units_processed": 4,
+    "status": "success",
+    "duration_ms": 420,
+    "locale": "en-US"
+  },
+  "narration": {
+    "persona": "war_office_herald",
+    "locale": "en-US",
+    "audio_asset_id": "vo/forge_ally_victory_v1",
+    "transcript": "Forge crafts the Ally -> Victory",
+    "beats": ["Forge", "crafts", "the Ally", "Victory"]
+  }
+}

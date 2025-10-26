@@ -1,0 +1,28 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "order-035",
+  "summary": "Arsenal equips the Phalanx -> Victory",
+  "glyph_chain": ["🏭", "⚙️", "🛡️", "✅"],
+  "intent": {
+    "actor": "arsenal",
+    "action": "equip",
+    "target": "phalanx",
+    "outcome": "victory",
+    "qualifiers": ["heavy"]
+  },
+  "telemetry_stub": {
+    "batch_id": "arsenal-equip-20251026T000300Z",
+    "ritual": "arsenal",
+    "units_processed": 4,
+    "status": "success",
+    "duration_ms": 640,
+    "locale": "en-US"
+  },
+  "narration": {
+    "persona": "war_office_herald",
+    "locale": "en-US",
+    "audio_asset_id": "vo/arsenal_phalanx_victory_v1",
+    "transcript": "Arsenal equips the Phalanx -> Victory",
+    "beats": ["Arsenal", "equips", "the Phalanx", "Victory"]
+  }
+}

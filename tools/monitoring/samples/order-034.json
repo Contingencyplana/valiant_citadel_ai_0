@@ -1,0 +1,27 @@
+{
+  "schema": "factory-order@1.0",
+  "order_id": "order-034",
+  "summary": "Relay signals the Vanguard -> Victory",
+  "glyph_chain": ["📡", "📨", "🛡️", "✅"],
+  "intent": {
+    "actor": "relay",
+    "action": "signal",
+    "target": "vanguard",
+    "outcome": "victory"
+  },
+  "telemetry_stub": {
+    "batch_id": "relay-signal-20251026T000200Z",
+    "ritual": "relay",
+    "units_processed": 4,
+    "status": "success",
+    "duration_ms": 300,
+    "locale": "en-US"
+  },
+  "narration": {
+    "persona": "war_office_herald",
+    "locale": "en-US",
+    "audio_asset_id": "vo/relay_vanguard_victory_v1",
+    "transcript": "Relay signals the Vanguard -> Victory",
+    "beats": ["Relay", "signals", "the Vanguard", "Victory"]
+  }
+}
