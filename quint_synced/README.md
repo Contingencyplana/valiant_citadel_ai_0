@@ -20,14 +20,13 @@ Update the files here first, then immediately propagate the exact same change to
 | v1.3 | 2025-10-26 | Pivot Five emoji-first alignment updates staged here | VC (source) · Pending HC · TF · TS · RD |
 | v1.4 | 2025-10-26 | RD review + adoption of Pivot Five alignment set; ready to propagate outward | RD · Pending HC · TF · TS |
 | v1.5 | 2025-10-26 | Toyfoundry ACK: emitter bridge online + War Office handoff checklist drafted | TF · Pending HC · TS · VC · RD |
-| v1.6 | 2025-10-26 | Valiant Citadel monitoring hooks live (schema_guard, narrator_log, glyph_vo_audit) | VC · Pending HC · TF · TS · RD |
 
 **Process reminder:**
 
 1. Modify the alignment doc in `high_command_ai_0`.
-1. Run `python tools/quint_sync.py` from any workspace root to mirror `quint_synced/` and capture ACK/TODO notes.
-1. Commit the change in each repo.
-1. Record the sync in the table (or review the generated entry in `quint_synced/sync_log.md`).
+1. Run `python tools/quint_sync.py` from any workspace root to mirror `quint_synced/`, capture ACK/TODO notes, and auto-commit the changes (use `--push` to push remotes).
+1. The script refuses to run if any outstanding TODO remains in the sync log—clear those before re-syncing.
+1. Review the generated entry in `quint_synced/sync_log.md` and confirm mirroring across fronts.
 
 If a workspace cannot be updated immediately, annotate the table (e.g., "Pending TF") and resolve the gap as soon as possible.
 
