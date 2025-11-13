@@ -99,5 +99,10 @@ Our safety infrastructure is implemented through four primary sections:
 - Emergency response readiness
 
 ---
+## Python commands
+- Readiness: `python -m tools.ops_readiness`
+- Exchange (validate + sync): `python tools/exchange_all.py`
+
+---
 *Genesis Order-2025-10-16-001 — Establish the Valiant Citadel*  
 *Last Updated: 2025-10-25 — Pivot Five integration*
