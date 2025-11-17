@@ -1,0 +1,27 @@
+{
+  "batch": "mass_alfa_batch1",
+  "generated_at": "2025-11-17T15:58:59Z",
+  "baseline_tag": "forge-alfa@2025-11-13-054",
+  "source_order": "order-2025-11-13-054",
+  "instances": [
+    {
+      "id": "alfa-m01",
+      "codename": "Alfa M01",
+      "workspace": "valiant_citadel_ai_0",
+      "role": "Delta",
+      "status": "hydrated",
+      "hydrated_at": "2025-11-17T15:58:59Z",
+      "paths": {
+        "readme": "production/mass_alfa_batch1/alfa_m01/README.md",
+        "telemetry": "production/mass_alfa_batch1/alfa_m01/telemetry.json",
+        "baseline": "production/mass_alfa_batch1/baseline.md"
+      },
+      "exchange": {
+        "ack": "outbox/acks/order-2025-11-14-055-ack.json",
+        "report": "outbox/reports/order-2025-11-14-055-report.json",
+        "hello": "outbox/reports/hello-Alfa-M01-20251117T155859Z.json"
+      },
+      "notes": "Awaiting remote path map + throughput sample before closing order."
+    }
+  ]
+}

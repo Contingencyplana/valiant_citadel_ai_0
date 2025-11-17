@@ -1,0 +1,23 @@
+{
+  "generated_at": "2025-11-17T15:58:59Z",
+  "entries": [
+    {
+      "id": "ledger-2025-11-14-055-delta",
+      "order_id": "order-2025-11-14-055",
+      "workspace": "valiant_citadel_ai_0",
+      "subject": "Alfa M01 hydration (Delta)",
+      "status": "in_progress",
+      "ack": "outbox/acks/order-2025-11-14-055-ack.json",
+      "report": "outbox/reports/order-2025-11-14-055-report.json",
+      "hello": "outbox/reports/hello-Alfa-M01-20251117T155859Z.json",
+      "paths": {
+        "baseline": "production/mass_alfa_batch1/baseline.md",
+        "instance": "production/mass_alfa_batch1/alfa_m01"
+      },
+      "notes": [
+        "Hydrated from forge-alfa@2025-11-13-054 baseline supplied by Toyfoundry.",
+        "Waiting on receiving workspaces to emit throughput before closing Batch 1."
+      ]
+    }
+  ]
+}
