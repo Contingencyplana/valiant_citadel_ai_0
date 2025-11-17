@@ -73,6 +73,13 @@ This directory contains documentation for implementing and maintaining safety in
 - Unified response plans
 - Shared resources
 
+## Alfa Batch 1 Integration Notes (Daily Doc Refresh - 2025-11-17)
+
+- **Toyfoundry Baseline:** Hydration pulls from `production/mass_alfa_batch1/baseline.md` (tag `forge-alfa@2025-11-13-054`) and emits hello/factory evidence referenced in `production/mass_alfa_batch1/alfa_m01/telemetry.json`.
+- **Exchange Artefacts:** Ack/report/hello bundles (`outbox/acks/order-2025-11-14-055-ack.json`, `outbox/reports/order-2025-11-14-055-report.json`, `outbox/reports/hello-Alfa-M01-20251117T155859Z.json`) must copy to the hub before downstream workspaces hydrate.
+- **Ledger Hooks:** `exchange/ledger/index.json` carries the Batch 1 lifecycle entry (`ledger-2025-11-14-055-delta`). Any additional doc refreshes should add notes there so High Command sees the updated canon.
+- **Telemetry Duty:** When the receiving workspaces (Delta → Theta → Zeta → Gamma → Alpha) finish their readiness/smoke runs, wire their paths back into `production/mass_alfa_batch1/instances.json` and archive the hello reports under `exchange/reports/inbox/`.
+
 ## Implementation Guidelines
 
 ### Setup Process
@@ -107,6 +114,6 @@ This directory contains documentation for implementing and maintaining safety in
 
 ## Version Control
 
-**Version:** 1.0  
-**Last Updated:** 2025-10-19  
-**Next Review:** 2025-11-19
+**Version:** 1.1  
+**Last Updated:** 2025-11-17 (Daily Doc Refresh)  
+**Next Review:** 2025-11-24 or after Batch 1 telemetry promotion

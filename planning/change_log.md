@@ -2,6 +2,10 @@
 
 All notable updates to the High Command AI workspace are documented here. Entries reference corresponding orders and ledger notes.
 
+## 2025-11-17
+
+- **Daily Doc Refresh** - Logged current-cycle status in `docs/emergency/incident_digest.md`, refreshed integration guidance with Alfa Batch 1 hooks (`docs/integration/README.md`), and added the ritual to `RUNBOOK.md` so hydration evidence and ledger updates stay discoverable during the Toyfoundry push.
+
 ## 2025-11-14
 
 - **Order order-2025-11-14-055** – Hydrated Alfa M01 from Toyfoundry's Batch 1 baseline, captured telemetry (`production/mass_alfa_batch1/alfa_m01/telemetry.json`) and staged acknowledgement/report pair plus hello ping (`outbox/acks/order-2025-11-14-055-ack.json`, `outbox/reports/order-2025-11-14-055-report.json`, `outbox/reports/hello-Alfa-M01-20251117T155859Z.json`).
