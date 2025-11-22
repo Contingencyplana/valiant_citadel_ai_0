@@ -2,6 +2,10 @@
 
 All notable updates to the High Command AI workspace are documented here. Entries reference corresponding orders and ledger notes.
 
+## 2025-11-22
+
+- **Hybrid Comms Restore** - Refreshed exchange tooling in `tools/` (end_of_block, factory_order_emitter, exchange_validator, exchange_watcher) and retired `exchange_all` as the smoke step. Cadence now runs via `python tools/end_of_block.py`, with smoke confirmed through `python tools/factory_order_emitter.py --help` to align hybrid channel expectations.
+
 ## 2025-11-17
 
 - **Daily Doc Refresh** - Logged current-cycle status in `docs/emergency/incident_digest.md`, refreshed integration guidance with Alfa Batch 1 hooks (`docs/integration/README.md`), and added the ritual to `RUNBOOK.md` so hydration evidence and ledger updates stay discoverable during the Toyfoundry push.

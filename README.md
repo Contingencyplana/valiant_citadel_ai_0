@@ -100,8 +100,10 @@ Our safety infrastructure is implemented through four primary sections:
 
 ---
 ## Python commands
+- Cadence (heartbeat → sync → readiness → exchange): `python tools/end_of_block.py`
 - Readiness: `python -m tools.ops_readiness`
-- Exchange (validate + sync): `python tools/exchange_all.py`
+- Smoke (emitter present): `python tools/factory_order_emitter.py --help`
+- Exchange (manual fallback): `python tools/exchange_all.py`
 
 ---
 *Genesis Order-2025-10-16-001 — Establish the Valiant Citadel*  

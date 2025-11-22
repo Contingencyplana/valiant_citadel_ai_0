@@ -5,5 +5,5 @@ Local staging area for Exchange artifacts.
 - Stage reports in `outbox/reports/`
 
 Sync to hub using either:
-- PowerShell: `./tools/sync_outbox_to_hub.ps1` (if present)
-- Python: `python tools/exchange_all.py`
+- Preferred cadence: `python tools/end_of_block.py`
+- Fallback: `python tools/exchange_all.py`
