@@ -13,7 +13,7 @@ Operator Loop (per session)
 2. **Intake** – Pull the latest exchange payloads; inspect `exchange/orders/dispatched/` and reconcile with the ledger.
 3. **Audit** – Review staged orders/reports and validate kill-switch + monitoring hooks (golf_00–golf_03 directories). Document findings in `planning/safety_board/`.
 4. **Respond** - Update policies or emergency procedures as needed, file reports in `outbox/reports/`, and pair acknowledgements for each handled order.
-5. **Sync & Smoke** - Run `python tools/end_of_block.py` (heartbeat → sync → readiness → exchange) to push new artifacts. Confirm emitter-based smoke with `python tools/factory_order_emitter.py --help` (retire `exchange_all` as smoke). Verify `logs/ops_readiness.json` and any new exchange logs are present.
+5. **Sync & Smoke** - Run `python tools/end_of_block.py` (heartbeat -> sync -> readiness -> exchange) to push new artifacts. Confirm emitter-based smoke with `python tools/factory_order_emitter.py --help`; keep `exchange_all` as the manual exchange push, not the smoke step. Verify `logs/ops_readiness.json` and any new exchange logs are present.
 6. **Signal** - Post safety status (green/yellow/red) plus key notes in `planning/change_log.md` or via High Command if escalation is required. Note that emitter-based smoke is restored and hybrid cadence is aligned when applicable.
 
 ### Daily Doc Refresh (Valiant Ritual)

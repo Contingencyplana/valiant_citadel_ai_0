@@ -2,6 +2,11 @@
 
 All notable updates to the High Command AI workspace are documented here. Entries reference corresponding orders and ledger notes.
 
+## 2025-11-23
+
+- Hybrid path verified via `python tools/end_of_block.py`; exchange heartbeat, readiness, and exchange_all outputs captured in `logs/` alongside emitter help.
+- Emitter-based smoke restored; hybrid cadence aligned; exchange_all smoke retired.
+
 ## 2025-11-22
 
 - **Hybrid Comms Restore** - Refreshed exchange tooling in `tools/` (end_of_block, factory_order_emitter, exchange_validator, exchange_watcher) and retired `exchange_all` as the smoke step. Cadence now runs via `python tools/end_of_block.py`, with smoke confirmed through `python tools/factory_order_emitter.py --help` to align hybrid channel expectations.
